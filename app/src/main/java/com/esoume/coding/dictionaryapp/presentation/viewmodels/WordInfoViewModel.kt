@@ -31,7 +31,7 @@ class WordInfoViewModel @Inject constructor(
     private val _uiEvent = MutableSharedFlow<UIEvent>()
     val uiEvent = _uiEvent.asSharedFlow()
 
-    private var searchJob: Job? = null
+    var searchJob: Job? = null
 
     fun onSearch(query: String) {
         _searchQuery.value = query
@@ -60,7 +60,6 @@ class WordInfoViewModel @Inject constructor(
                                 isLoading = true
                             )
                         }
-                        else -> {}
                     }
                 }.launchIn(this)
         }
